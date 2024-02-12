@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1E1E1E;
+}
+
+.wrapper {
+    background: white;
+    width: 1237px;
+    margin: 0 auto;
+}
+
+header {
+    background: #2B2B2B;
+    height: 90px;
+    display: flex;
+    width: 100%;
+}
+
+.logo {
+    width: 488px;
+    height: 60px;
+    background: #FA6060;
+}
+header #createOB{
+    width: 285px;
+    height: 47px;
+    background-color: #FFDD86;
+}
