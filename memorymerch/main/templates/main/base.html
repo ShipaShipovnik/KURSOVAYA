@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Базовая</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}" type="text/css">
+    <title>{% block title%}{% endblock %}</title>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         <!-- контент -->
         <div class="container">
             <div class="content">
-                <!-- eurhguerhguheurighuierhguiheuirhguiehrughe -->
+               {% block content %}{% endblock %}
             </div>
         </div>
     </div>
