@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Categories(models.Model):
     catgname = models.CharField(max_length=60, blank=False, default='')
 
@@ -12,4 +11,8 @@ class Tovar(models.Model):
     shipping = models.TextField(max_length=300, blank=False, default='')
     tovardescrpt = models.TextField(max_length=500, blank=False, default='')
 
+
+class Post(models.Model):
+    title = models.CharField(max_length=100, blank=False)
+    postbody = models.TextField(max_length=1000)
 
