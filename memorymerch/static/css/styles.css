@@ -66,8 +66,9 @@ header #createOB {
 
 }
 
-header #avatar {
+header #userlog {
     grid-area: avatar;
+    color: #FFDD86;
 }
 
 /* навигация */

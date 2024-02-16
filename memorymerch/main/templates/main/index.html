@@ -1,7 +1,18 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Заголовок странички{% endblock %}
+{% block title %}Главная{% endblock %}
 
 {% block content%}
 <p>lorem lorem </p>
+
+{% for tovar in tovars %}
+<div class="media-body">
+    <div>
+        <div>{{ tovar.date_posted|date:"F d, Y" }}</div>
+    </div>
+    <h2>{{ tovar.tovarname }}</h2>
+    <p>{{ tovar.tovardescrpt }}</p>
+</div>
+{% endfor %}
+
 {% endblock %}
