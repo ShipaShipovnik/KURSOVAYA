@@ -11,23 +11,21 @@
 
 <body>
     <header>
-        <div class="logo"></div>
+        <div class="logo"><a href=""><img src="{% static 'img/logo.png' %}" alt="logo"></a></div>
         <button id="createOB">Разместить объявление</button>
-        <a href=""><img src="" alt="avatar"></a>
+        <a href="" id="avatar"><img src="" alt="avatar"></a>
     </header>
     <div class="wrapper">
         <!-- навигация -->
-        <div class="container">
-            <div class="main-nav">
-                <li><a href="">О нас</a></li>
-                <li><a href="">О площадке</a></li>
-                <li><a href="">правила</a></li>
-            </div>
+        <div class="main-nav">
+            <li><a href="">О нас</a></li>
+            <li><a href="">О площадке</a></li>
+            <li><a href="">Правила</a></li>
         </div>
         <!-- контент -->
         <div class="container">
             <div class="content">
-               {% block content %}{% endblock %}
+                {% block content %}{% endblock %}
             </div>
         </div>
     </div>

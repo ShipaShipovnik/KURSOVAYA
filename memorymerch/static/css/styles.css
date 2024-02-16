@@ -1,33 +1,84 @@
+@import url('https://fonts.cdnfonts.com/css/apercu-pro');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Apercu Pro', sans-serif;
 }
+
 
 body {
     background-color: #1E1E1E;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+html,
+body,
+#wrapper {
+    height: 100%;
+}
+
+
 .wrapper {
     background: white;
     width: 1237px;
+    height: 100%;
     margin: 0 auto;
+    margin-bottom: 100px;
 }
-
+.container{
+    margin: 20px;
+}
+/* хедер */
 header {
     background: #2B2B2B;
     height: 90px;
-    display: flex;
     width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: 90px;
+    align-items: center;
+    grid-template-areas:
+        "logo button avatar";
+        background-image: url(../img/header_bg.png);
+    background-size: cover;
 }
 
 .logo {
-    width: 488px;
     height: 60px;
-    background: #FA6060;
+    /* background: #FA6060; */
+    grid-area: logo;
 }
-header #createOB{
+
+header #createOB {
     width: 285px;
     height: 47px;
+    text-transform: uppercase;
+    border-radius: 10px;
     background-color: #FFDD86;
+    grid-area: button;
+
+}
+
+header #avatar {
+    grid-area: avatar;
+}
+
+/* навигация */
+.main-nav{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #c7c7c7;
+    height: 35px;
+    padding: 10px;
+}
+.main-nav li{
+    list-style-type: none;
+    margin-right: 20px;
 }
