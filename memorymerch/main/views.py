@@ -3,7 +3,8 @@ from .models import Post,Tovar
 
 def index(request):
     context = {
-        'tovars': Tovar.objects.all()
+        'tovars': Tovar.objects.all(),
+        'posts': Post.objects.all()
     }
     return render(request, 'main/index.html',context)
 

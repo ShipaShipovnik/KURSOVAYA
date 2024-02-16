@@ -18,6 +18,17 @@ a {
     cursor: pointer;
 }
 
+section{
+    margin-top: 20px;
+}
+
+.smallhead{
+    margin-bottom:20px;
+    font-size: 16px;
+    color: #474747;
+}
+
+
 html,
 body,
 #wrapper {
@@ -30,11 +41,12 @@ body,
     width: 1237px;
     height: 100%;
     margin: 0 auto;
-    margin-bottom: 100px;
 }
-.container{
+
+.container {
     margin: 20px;
 }
+
 /* хедер */
 header {
     background: #2B2B2B;
@@ -46,7 +58,7 @@ header {
     align-items: center;
     grid-template-areas:
         "logo button avatar";
-        background-image: url(../img/header_bg.png);
+    background-image: url(../img/header_bg.png);
     background-size: cover;
 }
 
@@ -69,17 +81,61 @@ header #createOB {
 header #userlog {
     grid-area: avatar;
     color: #FFDD86;
+    display: flex;
+    align-items: center;
+}
+#avatar img{
+    width: 50px;
 }
 
 /* навигация */
-.main-nav{
+.main-nav {
     display: flex;
     justify-content: flex-start;
     background-color: #c7c7c7;
     height: 35px;
     padding: 10px;
 }
-.main-nav li{
+
+.main-nav li {
     list-style-type: none;
     margin-right: 20px;
+}
+
+/* БЛОКИ НА ГЛАВНОЙ */
+.tovars__line {
+    display: grid;
+    grid-template-columns: repeat(6,183px);
+    grid-auto-rows: repeat(2,287px);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.tovar-block {
+    /* border: 1px black solid; */
+    width: 185px;
+}
+
+.tovar-block__image {
+    width: 185x;
+    height: 185px;
+    background-color: #c7c7c7;
+}
+
+.tovar-block p,
+h3 {
+    margin-top: 5px;
+}
+
+.newsposts__line {
+    display: grid;
+    grid-template-columns: repeat(3,387px);
+    grid-auto-rows: repeat(2,182px);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.post-block{
+    border-radius: 15px;
+    background-color: #c7c7c7;
+    padding: 15px;
 }

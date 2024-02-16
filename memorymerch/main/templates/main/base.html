@@ -16,9 +16,9 @@
     <div id="userlog">
         {% if user.is_authenticated %}
         {{ user.username }} --
-        <a href="" id="avatar"><img src="" alt="avatar"></a>
+        <a href="" id="avatar"><img src="{% static 'img/default.png' %}" alt="avatar"></a>
         {% else %}
-        <a href="">Войти</a> / <a href="">Зарегестрироваться</a>
+        <a href="">Войти</a><a href="">Зарегестрироваться</a>
         {% endif %}
     </div>
 </header>
