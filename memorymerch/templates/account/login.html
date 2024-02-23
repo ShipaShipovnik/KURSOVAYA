@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div>
+<!--    мессежи-->
+    {% block messages %}
+    {% if messages %}
+    <div>
+        <ul>
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endblock %}
+
+    <h3 id="head_banner">Войти</h3>
+
+    <form id="login_form" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        {% if redirect_field_value %}
+
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+
+        {% endif %}
+
+        <button type="submit">{% trans "Sign In" %}</button>
+        <a href="{% url 'account_reset_password' %}">{% trans "Forgot Password ?" %}</a>
+
+    </form>
+</div>
+{% endblock %}

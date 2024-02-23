@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content%}
+<p>Добро пожаловать на MemoryMerch! </p>
+
+<section class="tovars">
+    <h2 class="smallhead">Последние объявления:</h2>
+    <div class="tovars__line">
+        {% for tovar in tovars %}
+        <div class="tovar-block">
+            <div class="tovar-block__image"></div>
+            <h3>{{ tovar.tovarname }}</h3>
+            <p>{{ tovar.tovarprice }} р.</p>
+            <p>{{ tovar.date_posted|date:"F d, Y" }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="newsposts">
+    <h2 class="smallhead">Последние новости из мира гик-продукции:</h2>
+    <div class="newsposts__line">
+        {% for post in posts %}
+        <div class="post-block">
+            <h1>{{ post.title }}</h1>
+            <p>боаблабалабаал</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

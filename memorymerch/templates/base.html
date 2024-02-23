@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}" type="text/css">
+    <title>Memorymerch | {% block title%}{% endblock %}</title>
+</head>
+
+<body>
+<header>
+    <div class="logo"><a href=""><img src="{% static 'img/logo.png' %}" alt="logo"></a></div>
+    <button id="createOB">Разместить объявление</button>
+    <div id="userlog">
+        {% if user.is_authenticated %}
+        {{ user.username }} --
+        <a href="" id="avatar"><img src="{% static 'img/default.png' %}" alt="avatar"></a>
+        {% else %}
+        <a href="">Войти</a><a href="">Зарегестрироваться</a>
+        {% endif %}
+    </div>
+</header>
+<div class="wrapper">
+    <!-- навигация -->
+    <div class="main-nav">
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'about' %}">О нас</a></li>
+        <li><a href="{% url 'about' %}">О площадке</a></li>
+        <li><a href="{% url 'rules' %}">Правила</a></li>
+    </div>
+    <!-- контент -->
+    <div class="container">
+        <div class="content">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
