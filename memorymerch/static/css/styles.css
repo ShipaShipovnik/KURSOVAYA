@@ -18,12 +18,12 @@ a {
     cursor: pointer;
 }
 
-section{
+section {
     margin-top: 20px;
 }
 
-.smallhead{
-    margin-bottom:20px;
+.smallhead {
+    margin-bottom: 20px;
     font-size: 16px;
     color: #474747;
 }
@@ -84,7 +84,13 @@ header #userlog {
     display: flex;
     align-items: center;
 }
-#avatar img{
+
+.main-header_links {
+    color: #FFDD86;
+    margin: 0 10px 0 10px;
+}
+
+#avatar img {
     width: 50px;
 }
 
@@ -105,8 +111,8 @@ header #userlog {
 /* БЛОКИ НА ГЛАВНОЙ */
 .tovars__line {
     display: grid;
-    grid-template-columns: repeat(6,183px);
-    grid-auto-rows: repeat(2,287px);
+    grid-template-columns: repeat(6, 183px);
+    grid-auto-rows: repeat(2, 287px);
     row-gap: 20px;
     column-gap: 20px;
 }
@@ -129,12 +135,13 @@ h3 {
 
 .newsposts__line {
     display: grid;
-    grid-template-columns: repeat(3,387px);
-    grid-auto-rows: repeat(2,182px);
+    grid-template-columns: repeat(3, 387px);
+    grid-auto-rows: repeat(2, 182px);
     row-gap: 20px;
     column-gap: 20px;
 }
-.post-block{
+
+.post-block {
     border-radius: 15px;
     background-color: #c7c7c7;
     padding: 15px;

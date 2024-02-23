@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Профиль {{ user.username }}{% endblock %}
+
+{% block content%}
+<div class="profile-container">
+    <section class="profile_avatar-name">
+        <div class="avatar-name_square"></div>
+        <h2>{{ user.username }}</h2>
+    </section>
+    <section class="profile_tovars">
+        <h2 class="smallhead">Ваши объявления:</h2>
+        <div class="tovars__line">
+            {% for tovar in tovars %}
+            <div class="tovar-block">
+                <div class="tovar-block__image"></div>
+                <h3>{{ tovar.tovarname }}</h3>
+                <p>{{ tovar.tovarprice }} р.</p>
+                <p>{{ tovar.date_posted|date:"F d, Y" }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="profile_favs">
+        <h2 class="smallhead">Ваши избранные:</h2>
+        <div class="tovars__line">
+            {% for tovar in tovars %}
+            <div class="tovar-block">
+                <div class="tovar-block__image"></div>
+                <h3>{{ tovar.tovarname }}</h3>
+                <p>{{ tovar.tovarprice }} р.</p>
+                <p>{{ tovar.date_posted|date:"F d, Y" }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
