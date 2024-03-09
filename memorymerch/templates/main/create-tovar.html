@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Создать объявление{% endblock %}
+
+{% block content%}
+    <form method="post" class="add-form">
+        {% csrf_token %}
+        {{form.tovarname}} <br>
+        {{form.tovarprice}}<br>
+        {{form.category}}<br>
+        {{form.shipping}}<br>
+        {{form.tovardescrpt}}<br>
+        <button type="submit">Добавить</button>
+    </form>
+{% endblock %}

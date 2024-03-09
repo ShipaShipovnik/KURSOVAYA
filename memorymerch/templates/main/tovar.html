@@ -1,8 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}О площадке{% endblock %}
+{% block title %}Товар{% endblock %}
 
 {% block content%}
+<div class="tovar-page">
+    <div class="tovar__head-block">
+        <h1 class="tovar-name">Фигурка NECA Heav - Team fortress 2</h1>
+        <h3 class="tovar-date">дата публикации</h3>
+    </div>
+    <div class="tovar__photo-block"></div>
+    <div class="tovar__info-block">
+        <!-- <p><span class="tovar-important-text">АДРЕС:</span> здесь будет адрес</p> -->
+        <p><span class="tovar-important-text">ДОСТАВКА:</span> здесь инфа об доставке</p>
+        <div class="info-block__author">
+            <img src="{% static 'img/default.png' %}" alt="author">
+            <p>Сергей Васильевич 849345</p>
+        </div>
+        <div class="info-block__buttons">
+            <p class="tovar__button buy"><a href="">Связаться с продавцом</a></p>
+            <p class="tovar__button fav"><a href="">Добавить в избранное</a></p>
+        </div>
+    </div>
+    <div class="tovar__body-block">
+        <p><span class="tovar-important-text">ОПИСАНИЕ:</span> фигурка редкая в хорошем состоянии</p>
+
+    </div>
+</div>
+
+
+
 
 
 {% endblock %}

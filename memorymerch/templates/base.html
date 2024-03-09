@@ -12,14 +12,17 @@
 <body>
 <header>
     <div class="logo"><a href=""><img src="{% static 'img/logo.png' %}" alt="logo"></a></div>
-    <button id="createOB">Разместить объявление</button>
+    <form action="{% url 'create-tovar' %}" target="_blank">
+        <button id="createOB">Разместить объявление</button>
+    </form>
     <div id="userlog">
         {% if user.is_authenticated %}
-        {{ user.username }} 
+        {{ user.username }}
         <a class="main-header_links" href="" id="avatar"><img src="{% static 'img/default.png' %}" alt="avatar"></a> /
         <a class="main-header_links" href="{% url 'account_logout' %}">Выйти</a>
         {% else %}
-        <a class="main-header_links" href="{% url 'account_login' %}">Войти</a> / <a href="{% url 'account_signup' %}" class="main-header_links">Зарегестрироваться</a>
+        <a class="main-header_links" href="{% url 'account_login' %}">Войти</a> / <a href="{% url 'account_signup' %}"
+                                                                                     class="main-header_links">Зарегестрироваться</a>
         {% endif %}
     </div>
 </header>
