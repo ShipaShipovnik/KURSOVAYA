@@ -10,9 +10,6 @@ def index(request):
     }
     return render(request, 'main/index.html',context)
 
-def createtovar(request):
-    return render(request, 'main/tovar-form.html')
-
 def about(request):
     return render(request, 'main/about.html')
 
