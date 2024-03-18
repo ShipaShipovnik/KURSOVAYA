@@ -5,10 +5,19 @@
 {% block content%}
 <p>Добро пожаловать на MemoryMerch! </p>
 
+<form method="get" class="form-filter">
+    <div class="form-filter__inputs">
+        По названию: {{ tovars.form.tovarname }}
+        По цене: {{ tovars.form.tovarprice }}
+        По категории: {{ tovars.form.category }}
+        <button type="submit" class="btn btn-primary">Фильтровать</button>
+    </div>
+</form>
+<hr>
 <section class="tovars">
-    <h2 class="smallhead">Последние объявления:</h2>
+    <h2 class="smallhead">Все объявления:</h2>
     <div class="tovars__line">
-        {% for tovar in tovars %}
+        {% for tovar in tovars.qs %}
         <div class="tovar-block">
             <div class="tovar-block__image"></div>
             <h3>{{ tovar.tovarname }}</h3>
@@ -18,12 +27,13 @@
         {% endfor %}
     </div>
 </section>
+
 <section class="newsposts">
     <h2 class="smallhead">Последние новости из мира гик-продукции:</h2>
     <div class="newsposts__line">
         {% for post in posts %}
         <div class="post-block">
-            <h1>{{ post.title }}</h1>
+            <h1>{{ posts.title }}</h1>
             <p>боаблабалабаал</p>
         </div>
         {% endfor %}
