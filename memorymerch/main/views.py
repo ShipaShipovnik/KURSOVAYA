@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Post, Tovar
 from .forms import TovarForm
 from .filters import TovarFilter
+from django.views.generic import DetailView,ListView
 
 
 def index(request):
@@ -32,6 +33,15 @@ def createtovar(request):
     context = {"form": form}
     return render(request, "main/create-tovar.html", context)
 
+class TovarList(ListView):
+    model = Tovar
+    context_object_name = 'tovars'
 
-def tovar(request):
-    return render(request, "main/tovar.html")
+class TovarDetail(DetailView):
+    model = Tovar
+    template_name = 'main/tovar.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        return context

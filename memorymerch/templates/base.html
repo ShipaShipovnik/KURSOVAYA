@@ -12,9 +12,12 @@
 <body>
 <header>
     <div class="logo"><a href=""><img src="{% static 'img/logo.png' %}" alt="logo"></a></div>
+    {% if user.is_authenticated %}
     <form action="{% url 'create-tovar' %}" target="_blank">
         <button id="createOB">Разместить объявление</button>
     </form>
+    {% else %}
+    {% endif %}
     <div id="userlog">
         {% if user.is_authenticated %}
         {{ user.username }}
