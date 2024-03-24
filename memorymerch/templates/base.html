@@ -10,47 +10,70 @@
 </head>
 
 <body>
-<header>
-    <div class="logo"><a href=""><img src="{% static 'img/logo.png' %}" alt="logo"></a></div>
-    {% if user.is_authenticated %}
-    <form action="{% url 'create-tovar' %}" target="_blank">
-        <button id="createOB">Разместить объявление</button>
-    </form>
-    {% else %}
-    {% endif %}
-    <div id="userlog">
-        {% if user.is_authenticated %}
-        {{ user.username }}
-        <a class="main-header_links" href="" id="avatar"><img src="{% static 'img/default.png' %}" alt="avatar"></a> /
-        <a class="main-header_links" href="{% url 'account_logout' %}">Выйти</a>
-        {% else %}
-        <a class="main-header_links" href="{% url 'account_login' %}">Войти</a> / <a href="{% url 'account_signup' %}"
-                                                                                     class="main-header_links">Зарегестрироваться</a>
-        {% endif %}
-    </div>
-</header>
-<div class="wrapper">
-    <!-- навигация -->
-    <div class="main-nav">
-        <li><a href="{% url 'index' %}">Главная</a></li>
-        <li><a href="{% url 'about' %}">О нас</a></li>
-        <li><a href="{% url 'about' %}">О площадке</a></li>
-        <li><a href="{% url 'rules' %}">Правила</a></li>
-    </div>
-    <!-- контент -->
-    <div class="container">
-        <div class="content">
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-            {% endfor %}
+    <img src="{% static 'img/kitten.gif' %}" alt="" id="kitten">
+    <header>
+        <div class="header-wrapper">
+            <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt="logo"></a></div>
+            {% if user.is_authenticated %}
+            <form action="{% url 'create-tovar' %}" target="_blank">
+                <button id="createOB">Добавить товар</button>
+            </form>
+            {% else %}
             {% endif %}
-            {% block content %}{% endblock %}
+            <div id="userlog">
+                {% if user.is_authenticated %}
+                {{ user.username }}
+                <a class="main-header_links" href="{% url 'basket' %}" id="avatar"><img
+                        src="{% static 'img/bread.gif' %}" alt="avatar"></a> |
+                <a class="main-header_links" href="{% url 'account_logout' %}">Выйти</a>
+                {% else %}
+                <a class="main-header_links" href="{% url 'account_login' %}">Войти</a> / <a
+                    href="{% url 'account_signup' %}" class="main-header_links">Зарегестрироваться</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <!-- навигация -->
+        <div class="main-nav">
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'about' %}">О нас</a></li>
+            <li><a href="{% url 'rules' %}">Полезная информация</a></li>
+        </div>
+        <!-- контент -->
+        <div class="container">
+            <div class="content">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% block content %}{% endblock %}
+            </div>
         </div>
     </div>
-</div>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-grid">
+                <div class="footer__c">
+                    <p>(с) MEMORYMERCH 2024 <br>
+                        Все права защищены</p>
+                </div>
+                <div class="footer__socials">
+                    <a href=""><img src="{% static 'img/socials_vk.png' %}" alt="social-1"></a>
+                    <a href=""><img src="{% static 'img/socials_tg.png' %}" alt="social-2"></a>
+                    <a href=""><img src="{% static 'img/socials_ok.png' %}" alt="social-3"></a>
+                </div>
+                <div class="footer_contacts">
+                    <p><span id="footer__phone">+ 7 999 999 99 99</span> - 11:00 - 18:00 ПН-ПТ</p>
+                    <p id="footer__email">shop.memorymerch.support@mm.ru</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>

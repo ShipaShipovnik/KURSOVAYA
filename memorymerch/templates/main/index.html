@@ -5,15 +5,14 @@
 {% block content%}
 <p>Добро пожаловать на MemoryMerch! </p>
 
+
 <form method="get" class="form-filter">
     <div class="form-filter__inputs">
-        По названию: {{ tovars.form.tovarname }}
-        По цене: {{ tovars.form.tovarprice }}
-        По категории: {{ tovars.form.category }}
-        <button type="submit" class="btn btn-primary">Фильтровать</button>
+        {{ tovars.form.category }} {{ tovars.form.tovarname }}
+        <button type="submit" class="btn btn-primary">Поиск</button>
     </div>
 </form>
-<hr>
+
 <section class="tovars">
     <h2 class="smallhead">Все объявления:</h2>
     <div class="tovars__line">

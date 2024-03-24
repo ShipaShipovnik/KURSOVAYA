@@ -46,47 +46,89 @@ body,
 
 /* хедер */
 header {
-  background: #2B2B2B;
+  background-image: url(../img/header_bg.png);
   height: 90px;
   width: 100%;
+}
+header .header-wrapper {
+  width: 1237px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 3fr 200px 1fr;
   grid-template-rows: 90px;
   align-items: center;
   grid-template-areas: "logo button avatar";
-  background-image: url(../img/header_bg.png);
   background-size: cover;
 }
-
-.logo {
+header .header-wrapper form {
+  width: 170px;
+}
+header .header-wrapper form #createOB {
+  height: 47px;
+  width: 100%;
+  text-transform: uppercase;
+  background-color: #FFDD86;
+  grid-area: button;
+}
+header .header-wrapper .logo {
   height: 60px;
   /* background: #FA6060; */
   grid-area: logo;
 }
-
-header #createOB {
-  width: 285px;
-  height: 47px;
-  text-transform: uppercase;
-  border-radius: 10px;
-  background-color: #FFDD86;
-  grid-area: button;
-}
-
-header #userlog {
+header .header-wrapper #userlog {
   grid-area: avatar;
   color: #FFDD86;
   display: flex;
   align-items: center;
 }
-
-.main-header_links {
+header .header-wrapper .main-header_links {
   color: #FFDD86;
   margin: 0 10px 0 10px;
 }
-
-#avatar img {
+header .header-wrapper #avatar img {
   width: 50px;
+}
+
+footer {
+  background-color: #2B2B2B;
+  height: 150px;
+}
+footer .footer-wrapper {
+  margin: 0 auto;
+  width: 1237px;
+  padding-top: 80px;
+}
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 50px;
+  color: white;
+}
+footer .footer-grid p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+footer .footer-grid .footer__c {
+  text-align: left;
+  font-size: 16px;
+}
+footer .footer-grid .footer__socials {
+  display: flex;
+  justify-content: center;
+}
+footer .footer-grid .footer__socials img {
+  width: 25px;
+  margin-right: 10px;
+}
+footer .footer-grid .footer_contacts {
+  text-align: right;
+}
+footer .footer-grid .footer_contacts #footer__phone {
+  font-size: 16px;
+  font-weight: bold;
+}
+footer .footer-grid .footer_contacts #footer__email {
+  color: #FA6060;
 }
 
 /* навигация */
@@ -97,13 +139,47 @@ header #userlog {
   height: 35px;
   padding: 10px;
 }
-
 .main-nav li {
   list-style-type: none;
   margin-right: 20px;
 }
+.main-nav li:hover {
+  text-decoration: underline;
+}
 
 /* БЛОКИ НА ГЛАВНОЙ */
+.form-filter {
+  width: 100%;
+  margin: 20px 0;
+}
+.form-filter .form-filter__inputs {
+  display: flex;
+  align-items: center;
+}
+.form-filter .form-filter__inputs input {
+  border: none;
+  color: black;
+  height: 40px;
+  background-color: #dddddd;
+}
+.form-filter .form-filter__inputs #id_category {
+  width: 20%;
+  background-color: #FFDD86;
+  margin-right: 10px;
+}
+.form-filter .form-filter__inputs #id_tovarname {
+  width: 70%;
+  height: 30px;
+  background-color: none;
+  margin-right: 10px;
+}
+.form-filter .form-filter__inputs button {
+  background-color: #FA6060;
+  height: 30px;
+  width: 10%;
+  border: none;
+}
+
 .tovars__line {
   display: grid;
   grid-template-columns: repeat(6, 183px);
@@ -142,6 +218,23 @@ h3 {
   border-radius: 15px;
   background-color: #c7c7c7;
   padding: 15px;
+}
+
+.add-form td {
+  padding-top: 10px;
+}
+.add-form .add-form__label {
+  width: 200px;
+}
+.add-form textarea {
+  min-width: 400px;
+}
+.add-form button {
+  float: right;
+  width: 120px;
+  height: 30px;
+  border: none;
+  background-color: #FA6060;
 }
 
 /* СТРАНИЧКА ТОВАРА */
@@ -209,4 +302,48 @@ h3 {
 
 .tovar__body-block {
   grid-area: tovar__body-block;
+}
+
+.logout-message {
+  text-align: center;
+}
+.logout-message h3,
+.logout-message p {
+  margin-bottom: 10px;
+}
+.logout-message #logout_form {
+  height: 100px;
+}
+.logout-message #logout_form button {
+  width: 70px;
+  height: 30px;
+  border: none;
+  background: #000;
+  color: white;
+  margin-right: 10px;
+}
+
+#kitten {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 100px;
+  transition: 1s;
+}
+
+#kitten:hover {
+  width: 200px;
+}
+
+.login-message h3,
+.login-message p {
+  margin-bottom: 10px;
+}
+.login-message button {
+  width: 70px;
+  height: 30px;
+  border: none;
+  background: #000;
+  color: white;
+  margin-right: 10px;
 }/*# sourceMappingURL=styles.css.map */

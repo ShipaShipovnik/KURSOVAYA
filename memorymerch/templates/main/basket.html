@@ -8,11 +8,13 @@
 <h1>Корзина {{ user.username }}</h1>
 <section class="basket">
     {% for basket in baskets %}
-    <div class="tovar-block">
-        <div class="tovar-block__image"></div>
+    <div class="tovar-inbasket">
+        <div class="tovar-inbasket__image"></div>
         <h3><a href="{% url 'tovar' basket.tovar.id %}">{{ basket.tovar.tovarname }}</a></h3>
         <p>{{ basket.tovar.tovarprice }} р.</p>
         <p>{{ baske.quantity }}</p>
+        <input type="button" value="+">
+        <input type="button" value="-">
     </div>
     {% endfor %}
 </section>

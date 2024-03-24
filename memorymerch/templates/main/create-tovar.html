@@ -3,13 +3,35 @@
 {% block title %}Создать объявление{% endblock %}
 
 {% block content%}
-    <form method="post" class="add-form">
-        {% csrf_token %}
-        Заголовок товара: {{form.tovarname}} <br>
-        Цена: {{form.tovarprice}}<br>
-        Выберите категорию: {{form.category}}<br>
-        Распишите способы и условия доставки: {{form.shipping}}<br>
-        Опишите товар: {{form.tovardescrpt}}<br>
-        <button type="submit">Добавить</button>
-    </form>
+<form method="post" class="add-form">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td class="add-form__label">Заголовок товара:</td>
+            <td>{{form.tovarname}}</td>
+        </tr>
+        <tr>
+            <td class="add-form__label">Цена:</td>
+            <td>{{form.tovarprice}}</td>
+        </tr>
+        <tr>
+            <td class="add-form__label">Выберите категорию:</td>
+            <td>{{form.category}}</td>
+        </tr>
+        <tr>
+            <td class="add-form__label">Распишите способы и условия доставки</td>
+            <td>{{form.shipping}}</td>
+        </tr>
+        <tr>
+            <td class="add-form__label">Опишите товар</td>
+            <td>{{form.tovardescrpt}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <button type="submit">Добавить</button></td>
+        </tr>
+    </table>
+   
+</form>
+
 {% endblock %}

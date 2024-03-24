@@ -66,5 +66,10 @@ def basket_add(request, tovar_id):
         return HttpResponseRedirect(current_page)
 
 def basket(request):
-    context = {"baskets": Basket.objects.filter(user=request.user)}
-    return render(request, "main/basket.html", context)
+    if request.user.is_authenticated:
+        context = {"baskets": Basket.objects.filter(user=request.user)}
+        return render(request, "main/basket.html", context)
+    else:
+        return render(request, "account/signup.html")
+
+    

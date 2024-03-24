@@ -2,10 +2,9 @@
 {% load i18n %}
 
 {% block content %}
-<div>
-<!--мессежи-->
+<div class="login-message">
     {% block messages %}
-    {% if messages %}
+    <!-- {% if messages %}
     <div>
         <ul>
             {% for message in messages %}
@@ -19,7 +18,7 @@
         </ul>
     </div>
     {% endif %}
-    {% endblock %}
+    {% endblock %} -->
 
     <h3 id="head_banner">Войти</h3>
 
@@ -30,7 +29,7 @@
 
         {% if redirect_field_value %}
 
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
 
         {% endif %}
 
