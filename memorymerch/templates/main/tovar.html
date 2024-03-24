@@ -18,7 +18,7 @@
             <p>Сергей Васильевич 849345</p>
         </div> -->
         <div class="info-block__buttons">
-            <p class="tovar__button buy"><a href="">Добавить в корзину</a></p>
+            <p class="tovar__button buy"><a href="{% url 'basket-add' tovar.id %}">Добавить в корзину</a></p>
             <p class="tovar__button fav"><a href="">Добавить в избранное</a></p>
         </div>
     </div>

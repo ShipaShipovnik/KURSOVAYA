@@ -5,11 +5,11 @@
 {% block content%}
     <form method="post" class="add-form">
         {% csrf_token %}
-        {{form.tovarname}} <br>
-        {{form.tovarprice}}<br>
-        {{form.category}}<br>
-        {{form.shipping}}<br>
-        {{form.tovardescrpt}}<br>
+        Заголовок товара: {{form.tovarname}} <br>
+        Цена: {{form.tovarprice}}<br>
+        Выберите категорию: {{form.category}}<br>
+        Распишите способы и условия доставки: {{form.shipping}}<br>
+        Опишите товар: {{form.tovardescrpt}}<br>
         <button type="submit">Добавить</button>
     </form>
 {% endblock %}
