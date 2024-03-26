@@ -23,7 +23,7 @@
             <div id="userlog">
                 {% if user.is_authenticated %}
                 {{ user.username }}
-                <a class="main-header_links" href="{% url 'basket' %}" id="avatar"><img
+                <a class="main-header_links" href="{% url 'cart:view_cart' %}" id="avatar"><img
                         src="{% static 'img/bread.gif' %}" alt="avatar"></a> |
                 <a class="main-header_links" href="{% url 'account_logout' %}">Выйти</a>
                 {% else %}

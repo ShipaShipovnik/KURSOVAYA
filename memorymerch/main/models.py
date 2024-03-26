@@ -30,11 +30,3 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
-class Basket(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    tovar = models.ForeignKey(Tovar, on_delete=models.CASCADE)
-    quantity = models.PositiveBigIntegerField(default=0)
-
-    def __str__(self):
-        return f'Корзина для {self.user.username} | Продукт {self.tovar.tovarname}'
