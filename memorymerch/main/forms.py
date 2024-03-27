@@ -1,5 +1,5 @@
 from .models import Tovar,Categories
-from django.forms import ModelForm, TextInput, Textarea,ImageField
+from django.forms import ModelForm, TextInput, Textarea
 from django import forms
 
 
@@ -18,5 +18,4 @@ class TovarForm(ModelForm):
             "category": forms.Select(attrs={'placeholder': 'Категория', 'class': 'form-input'}),
             "shipping": Textarea(attrs={'placeholder': 'Доставка', 'class': 'form-input'}),
             "tovardescrpt": Textarea(attrs={'placeholder': 'Фото товара', 'class': 'form-input'}),
-            "tovarimage": ImageField(),
         }

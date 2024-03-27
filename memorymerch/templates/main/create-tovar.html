@@ -4,8 +4,8 @@
 
 {% block content%}
 <form method="post" class="add-form">
-    {% csrf_token %}
     <table>
+        {% csrf_token %}
         <tr>
             <td class="add-form__label">Заголовок товара:</td>
             <td>{{form.tovarname}}</td>
@@ -27,11 +27,14 @@
             <td>{{form.tovardescrpt}}</td>
         </tr>
         <tr>
+            <td class="add-form__label">Добавьте фото</td>
+            <td>{{form.tovarimage}}</td>
+        </tr>
+        <tr>
             <td></td>
             <td> <button type="submit">Добавить</button></td>
         </tr>
     </table>
-   
 </form>
 
 {% endblock %}

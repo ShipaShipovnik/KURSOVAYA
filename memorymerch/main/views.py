@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from .models import Post, Tovar
 from .forms import TovarForm
 from .filters import TovarFilter
@@ -46,4 +46,3 @@ class TovarDetail(DetailView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-

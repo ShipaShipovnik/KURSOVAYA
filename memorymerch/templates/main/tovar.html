@@ -11,12 +11,7 @@
     </div>
     <div class="tovar__photo-block"><img src="{{ tovar.tovarimage.url}}" alt="connect" class="tovar-block__image-img" style="max-height:185px;max-width: 185px;"></div>
     <div class="tovar__info-block">
-        <!-- <p><span class="tovar-important-text">АДРЕС:</span> здесь будет адрес</p> -->
         <p><span class="tovar-important-text">ДОСТАВКА:</span> {{ tovar.shipping }}</p>
-        <!-- <div class="info-block__author">
-            <img src="{% static 'img/default.png' %}" alt="author">
-            <p>Сергей Васильевич 849345</p>
-        </div> -->
         <div class="info-block__buttons">
             <p class="tovar__button buy"><a href="{% url 'cart:add_to_cart' tovar.id %}">Добавить в корзину</a></p>
             <p class="tovar__button fav"><a href="">Добавить в избранное</a></p>

@@ -34,6 +34,16 @@ class Tovar(models.Model):
     def __str__(self):
         return f"{self.tovarname} {self.category}"
 
+    # def save(self):
+    #     super().save()
+
+    #     img = Image.open(self.tovarimage.path)
+
+    #     if img.height > 300 or img.width > 300:
+    #         output_size = (300, 300)
+    #         img.thumbnail(output_size)
+    #         img.save(self.tovarimage.path)
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100, blank=False)
