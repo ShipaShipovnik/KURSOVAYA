@@ -17,6 +17,19 @@ a {
   cursor: pointer;
 }
 
+button {
+  border: none;
+  color: black;
+}
+
+.button-red {
+  background-color: #FA6060;
+}
+
+.button-yellow {
+  background-color: #FFDD86;
+}
+
 section {
   margin-top: 20px;
 }
@@ -346,4 +359,49 @@ h3 {
   background: #000;
   color: white;
   margin-right: 10px;
+}
+
+.cart {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60% auto;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.cart .cart-list .tovar-incart {
+  margin-bottom: 10px;
+  height: 90px;
+  padding: 5px;
+  border: grey 1px solid;
+  display: grid;
+  grid-template-areas: "img tname btn" "img info btn";
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: 1fr 1fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.cart .cart-list .tovar-incart .tovar-inbasket__image {
+  grid-area: img;
+  width: 80px;
+  height: 80px;
+  background-color: #474747;
+}
+.cart .cart-list .tovar-incart .tovar-inbasket__name {
+  grid-area: tname;
+  margin-top: 0;
+}
+.cart .cart-list .tovar-incart .tovar-inbasket__info {
+  grid-area: info;
+}
+.cart .cart-list .tovar-incart .tovar-inbasket__remove {
+  grid-area: btn;
+  background-color: #000;
+}
+.cart .cart-list .tovar-incart .tovar-inbasket__remove a {
+  color: white;
+}
+.cart .cart-summ button {
+  width: 100%;
+  margin-top: 20px;
+  height: 40px;
 }/*# sourceMappingURL=styles.css.map */

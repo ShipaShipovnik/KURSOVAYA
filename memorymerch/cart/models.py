@@ -9,4 +9,4 @@ class CartItem(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
  
     def __str__(self):
-        return f'{self.quantity} x {self.tovar.name}'
+        return f'{self.quantity} x {self.tovar.tovarname}'

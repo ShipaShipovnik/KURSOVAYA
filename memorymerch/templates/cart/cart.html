@@ -4,21 +4,29 @@
 {% block title %}Корзина {{ user.username }} {% endblock %}
 
 {% block content%}
-<h1>Корзина {{ user.username }}</h1>
-<section class="basket">    
-    {% for item in cart_items %}
-    <div class="tovar-item">
-        <p>{{ item.tovar.tovarname }} ({{ item.quantity }})</p>
-        <p>Price: ${{ item.tovar.tovarprice }}</p>
-        <a href="{% url 'cart:remove_from_cart' item.id %}">Remove</a>
+<h3 class="smallhead">Корзина {{ user.username }}</h3>
+<section class="cart">
+    <div class="cart-list">
+        {% for item in cart_items %}
+        <div class="tovar-incart">
+            <div class="tovar-inbasket__image"><img src="{{ item.tovar.tovarimage.url}}" alt="connect" style="max-width: 80px;"></div>
+            <h3 class="tovar-inbasket__name"><a href="{% url 'tovar' item.tovar.id %}">{{ item.tovar.tovarname }}</a>
+            </h3>
+            <p class="tovar-inbasket__info">
+                Цена: <b>{{ item.tovar.tovarprice }} р. </b><br>
+                Колво: <b>({{ item.quantity }})</b>
+            </p>
+            <button class="tovar-inbasket__remove"><a
+                    href="{% url 'cart:remove_from_cart' item.id %}">Убрать</a></button>
+        </div>
+        {% empty %}
+        <p>Ваша корзина пуста! </p>
+        {% endfor %}
     </div>
-    {% empty %}
-    <p>Your cart is empty.</p>
-    {% endfor %}
- 
+    <div class="cart-summ">
+        <h1>Сумма: {{ total_price }} р.</h1>
+        <button class="button-red">Купить</button>
     </div>
-
-    <p>Total Price: ${{ total_price }}</p>
- 
 </section>
+
 {% endblock %}

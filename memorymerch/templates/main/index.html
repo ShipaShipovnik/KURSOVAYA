@@ -18,7 +18,7 @@
     <div class="tovars__line">
         {% for tovar in tovars.qs %}
         <div class="tovar-block">
-            <div class="tovar-block__image"></div>
+            <div class="tovar-block__image"><img src="{{ tovar.tovarimage.url}}" alt="connect" class="tovar-block__image-img" style="max-height:185px;max-width: 185px;"></div>
             <h3><a href="{% url 'tovar' tovar.id %}">{{ tovar.tovarname }}</a></h3>
             <p>{{ tovar.tovarprice }} р.</p>
             <p>{{ tovar.date_posted|date:"F d, Y" }}</p>

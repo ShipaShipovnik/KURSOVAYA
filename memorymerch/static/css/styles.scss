@@ -14,10 +14,24 @@ body {
     background-color: #1E1E1E;
 }
 
+// опредленные стили
 a {
     text-decoration: none;
     color: black;
     cursor: pointer;
+}
+
+button{
+    border: none;
+    color: black;
+}
+.button-red {
+    background-color: $MMred;
+
+}
+
+.button-yellow {
+    background-color: $MMyellow;
 }
 
 section {
@@ -30,6 +44,7 @@ section {
     color: #474747;
 }
 
+// 
 
 html,
 body,
@@ -240,7 +255,7 @@ footer {
 }
 
 .tovar-block__image {
-    width: 185x;
+    width: 185px;
     height: 185px;
     background-color: #c7c7c7;
 }
@@ -383,12 +398,15 @@ h3 {
 
 .logout-message {
     text-align: center;
+
     h3,
     p {
         margin-bottom: 10px;
     }
+
     #logout_form {
         height: 100px;
+
         button {
             width: 70px;
             height: 30px;
@@ -397,26 +415,30 @@ h3 {
             color: white;
             margin-right: 10px;
         }
-        
+
     }
 }
 
-#kitten{
+#kitten {
     position: fixed;
     bottom: 0px;
     right: 0px;
     width: 100px;
     transition: 1s;
 }
-#kitten:hover{
+
+#kitten:hover {
     width: 200px;
 }
+
 // signup
-.login-message{
+.login-message {
+
     h3,
     p {
         margin-bottom: 10px;
     }
+
     button {
         width: 70px;
         height: 30px;
@@ -425,4 +447,63 @@ h3 {
         color: white;
         margin-right: 10px;
     }
+}
+
+// cart
+.cart {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% auto;
+    column-gap: 20px;
+
+    .cart-list {
+        .tovar-incart {
+            margin-bottom: 10px;
+            height: 90px;
+            padding: 5px;
+            border: grey 1px solid;
+            display:grid;
+            grid-template-areas: 
+            "img tname btn"
+            "img info btn";
+            grid-template-columns: 10% auto 10%;
+            grid-template-rows: 1fr 1fr;
+            column-gap: 20px;
+
+            .tovar-inbasket__image{
+                grid-area: img;
+                width: 80px;
+                height: 80px;
+                background-color: #474747;
+                overflow: hidden;
+                img{
+                    height: 100%;
+                }
+            }
+            .tovar-inbasket__name{
+                grid-area: tname;
+                margin-top: 0;
+            }
+            .tovar-inbasket__info{
+                grid-area: info;
+            }
+            .tovar-inbasket__remove{
+                grid-area: btn;
+                background-color: #000;
+                a{  
+                    color: white;
+                }
+                
+            }
+        }
+    }
+    .cart-summ{
+        button{
+            width: 100%;
+            margin-top: 20px;
+            height: 40px;
+        }
+    }
+
+
 }
