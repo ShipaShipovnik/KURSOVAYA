@@ -205,6 +205,10 @@ footer {
     .form-filter__inputs {
         display: flex;
         align-items: center;
+        select{
+            border: none;
+            height:40px ;
+        }
 
         input {
             border: none;

@@ -169,6 +169,10 @@ footer .footer-grid .footer_contacts #footer__email {
   display: flex;
   align-items: center;
 }
+.form-filter .form-filter__inputs select {
+  border: none;
+  height: 40px;
+}
 .form-filter .form-filter__inputs input {
   border: none;
   color: black;

@@ -17,5 +17,5 @@ class TovarForm(ModelForm):
             "tovarprice": TextInput(attrs={'placeholder': 'Цена', 'class': 'form-input'}),
             "category": forms.Select(attrs={'placeholder': 'Категория', 'class': 'form-input'}),
             "shipping": Textarea(attrs={'placeholder': 'Доставка', 'class': 'form-input'}),
-            "tovardescrpt": Textarea(attrs={'placeholder': 'Фото товара', 'class': 'form-input'}),
+            "tovardescrpt": Textarea(attrs={'placeholder': 'Опишите хаарктеристики товара, его состояние, нюансы', 'class': 'form-input'}),
         }
