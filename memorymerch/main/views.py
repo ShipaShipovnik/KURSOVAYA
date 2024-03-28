@@ -23,7 +23,7 @@ def rules(request):
 def createtovar(request):
     error = ""
     if request.method == "POST":
-        form = TovarForm(request.POST)
+        form = TovarForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("index")

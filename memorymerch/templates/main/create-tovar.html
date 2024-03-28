@@ -3,7 +3,7 @@
 {% block title %}Создать объявление{% endblock %}
 
 {% block content%}
-<form method="post" class="add-form">
+<form method="POST" enctype="multipart/form-data" class="add-form">
     <table>
         {% csrf_token %}
         <tr>
@@ -32,7 +32,7 @@
         </tr>
         <tr>
             <td></td>
-            <td> <button type="submit">Добавить</button></td>
+            <td><button type="submit">Добавить</button></td>
         </tr>
     </table>
 </form>

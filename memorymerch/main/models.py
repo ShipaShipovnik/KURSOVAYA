@@ -26,7 +26,6 @@ class Tovar(models.Model):
     tovarimage = models.ImageField(
         upload_to="img/tovarimages",
         verbose_name="Фото товара",
-        max_length=100,
         default=None,
         blank=False,
     )

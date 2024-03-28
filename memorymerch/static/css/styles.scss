@@ -336,7 +336,11 @@ h3 {
     // border: #1E1E1E 1px solid;
     grid-area: tovar__photo-block;
     background-color: #dddddd;
-
+    .tovar-block__image-img{
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
 }
 
 
@@ -372,7 +376,7 @@ h3 {
         width: 100%;
         height: 60px;
         padding-top: 15px;
-        padding-left: 40px;
+        text-align: center;
         background-color: $MMred;
     }
 

@@ -9,12 +9,12 @@
         <h1 class="tovar-name">{{ tovar.tovarname }}</h1>
         <h3 class="tovar-date"> {{ tovar.category }} | {{ tovar.date_posted }}</h3>
     </div>
-    <div class="tovar__photo-block"><img src="{{ tovar.tovarimage.url}}" alt="connect" class="tovar-block__image-img" style="max-height:185px;max-width: 185px;"></div>
+    <div class="tovar__photo-block"><img src="{{ tovar.tovarimage.url}}" alt="connect" class="tovar-block__image-img"></div>
     <div class="tovar__info-block">
         <p><span class="tovar-important-text">ДОСТАВКА:</span> {{ tovar.shipping }}</p>
         <div class="info-block__buttons">
             <p class="tovar__button buy"><a href="{% url 'cart:add_to_cart' tovar.id %}">Добавить в корзину</a></p>
-            <p class="tovar__button fav"><a href="">Добавить в избранное</a></p>
+            <!-- <p class="tovar__button fav"><a href="">Добавить в избранное</a></p> -->
         </div>
     </div>
     <div class="tovar__body-block">

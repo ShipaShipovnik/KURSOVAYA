@@ -24,7 +24,7 @@
                 {% if user.is_authenticated %}
                 {{ user.username }}
                 <a class="main-header_links" href="{% url 'cart:view_cart' %}" id="avatar"><img
-                        src="{% static 'img/bread.gif' %}" alt="avatar"></a> |
+                        src="{% static 'img/cart.png' %}" alt="avatar"></a> |
                 <a class="main-header_links" href="{% url 'account_logout' %}">Выйти</a>
                 {% else %}
                 <a class="main-header_links" href="{% url 'account_login' %}">Войти</a> / <a
